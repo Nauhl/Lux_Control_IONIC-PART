@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="bar bar-header bar-calm">Información de cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div class="">
+      <ion-item>
+        <ion-input type="text" placeholder="Tu nombre" [(ngModel)]="Name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Email" [(ngModel)]="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Contraseña" [(ngModel)]="Password"></ion-input>
+      </ion-item>
+      <ion-button expand="full" class="ion-padding" color="success" (click)="updateAccount()">Actualizar información
+      </ion-button>
+      <br><br><br>
+      <ion-button slot="end" expand="full" class="ion-padding" color="danger" (click)="deleteAccount()">Eliminar mi cuenta
+      </ion-button>
+
+    </div>
+  </ion-list>
+
+</ion-content>

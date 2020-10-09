@@ -1,0 +1,47 @@
+<ion-header no-border>
+  <ion-toolbar color="#f3c623">
+    <ion-title>Bienvenido <br>{{this.clientName}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="btnLogout()">
+        <ion-icon slot="icon-only" name="exit"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-card>
+      <h1 style="text-align: center;">Interactúa con tu lámpara</h1>
+
+      <!-- <div style="padding-left: 30%;"> -->
+        <ion-button color="success" (click)="turnOn()">
+          <ion-icon name="power-outline"></ion-icon>
+          ON
+        </ion-button>
+  
+        <ion-button color="danger" (click)="turnOff()">
+          <ion-icon name="power-outline"></ion-icon>
+          OFF
+        </ion-button>
+        <!-- <ion-item>
+          <ion-label>Blueberry</ion-label>
+          <ion-toggle color="success" slot="start" name="blueberry" checked></ion-toggle>
+        </ion-item> -->
+      <!-- </div> -->
+
+      <p style="text-align: center;" *ngIf="light=='on'; else lightOFF">
+        Enciende tu lámpara.
+
+      </p>
+      <ng-template #lightOFF>
+        <p style="color: orange; text-align: center;">Apaga tu lámpara, si no la estás usando.</p>
+      </ng-template>
+    </ion-card>
+
+  </ion-grid>
+
+</ion-content>
